@@ -1,5 +1,5 @@
 body {
-    background: rgb(125, 160, 205);
+    background: rgb(30, 200, 202);
     color: rgb(45, 45, 45);
     padding: 10px;
     font-family: arial;
@@ -50,8 +50,8 @@ main {
     background: rgb(43, 92, 229);
     display: flex;
     border: 5px solid rgb(4, 4, 4);
-  padding: 10px;
-  border-radius: 25px;
+    padding: 10px;
+    border-radius: 25px;
 }
 
 .sidebar {
@@ -62,8 +62,8 @@ main {
 .sidebar-img {
     width: 200px;
     border: 4px solid rgb(131, 5, 177);
-  padding: 2px;
-  border-radius: 20px;
+    padding: 2px;
+    border-radius: 20px;
 }
 
 .content {
@@ -80,4 +80,79 @@ main {
 h2,
 h3 {
     margin: 0px;
+}
+
+/* portfolio styles */
+.content h1 {
+    color: black;
+}
+
+#portfolio {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#portfolio li {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#portfolio li:hover {
+    background: #eee;
+}
+
+#portfolio a {
+    text-decoration: none;
+    color: #454545;
+}
+/* responsive web design */
+@media screen and (min-width: 120px) and (max-width: 1080px) {
+    main {
+      height: 100ch;
+      zoom: 1.5;
+      display: grid;
+    }
+
+    h1 {
+      font-size: 44px;
+    }
+
+    h2 {
+      font-size: 42px;
+    }
+
+    h3 {
+      font-size: 36px;
+    }
+
+    #all-contents {
+      height: 100ch;
+      margin: none;
+    }
+
+    a {
+      font-size: 42px;
+    }
+
+    .sidebar {
+      margin-right: 0px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sidebar-img {
+      width: 100%;
+    }
+
+    p,
+    li {
+      font-size: 24px;
+    }
+
+    .content {
+      align-content: center;
+      justify-content: center;
+    }
 }
