@@ -60,6 +60,11 @@ createPlatform(1100, 280, 100, 40);
 createPlatform(1200, 200, 30, 30);
 createPlatform(1100,300, 50, 300);
 createPlatform(1100, 600, 300, 50);
+createPlatform(1240, 280, 50, 50);
+createPlatform(1200, 230, 30, 90);
+createPlatform(1380, 450, 10, 10);
+createPlatform(1300, 450, 10, 10);
+createPlatform(1180, 450, 10, 10);
 
 
     
@@ -69,9 +74,10 @@ createPlatform(1100, 600, 300, 50);
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
-createCollectable("database", 0, 450);
-createCollectable("database", 1340, 50);
+createCollectable("mario", 0, 450);
+createCollectable("rupee", 1340, 50);
 createCollectable("database", 800, 250);
+createCollectable("ring", 1160, 300)
 
 
     // TODO 3
@@ -86,7 +92,10 @@ createCannon("bottom", 720, 825);
 createCannon("bottom", 820, 576);
 createCannon("bottom", 1015, 700);
 createCannon("top", 1145, 700);
-createCannon("right", 180, 1000)
+createCannon("right", 180, 2000);
+createCannon("right", 650, 1, 100, 100);
+createCannon("top", 450, 2000);
+createCannon("left", 250, 3000)
 
 
 
