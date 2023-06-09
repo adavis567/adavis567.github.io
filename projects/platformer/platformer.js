@@ -47,37 +47,37 @@ $(function () {
     // Create platforms
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
-createPlatform(350, 630, 50, 110);
-createPlatform(250, 630, 100, 50);
-createPlatform(0, 500, 55, 50);
-createPlatform(350, 500, 110, 40);
-createPlatform(500, 450, 110, 40);
-createPlatform(1300, 100, 100, 50);
-createPlatform(650, 350, 40, 40);
-createPlatform(800, 300, 40, 40);
-createPlatform(1000, 250, 40, 40);
-createPlatform(1100, 280, 100, 40);
-createPlatform(1200, 200, 30, 30);
-createPlatform(1100,300, 50, 300);
-createPlatform(1100, 600, 300, 50);
-createPlatform(1240, 280, 50, 50);
-createPlatform(1200, 230, 30, 90);
-createPlatform(1380, 450, 10, 10);
-createPlatform(1300, 450, 10, 10);
-createPlatform(1180, 450, 10, 10);
+    createPlatform(350, 630, 50, 110);
+    createPlatform(250, 630, 100, 50);
+    createPlatform(0, 500, 55, 50);
+    createPlatform(350, 500, 110, 40);
+    createPlatform(500, 450, 110, 40);
+    createPlatform(1300, 100, 100, 50);
+    createPlatform(650, 350, 40, 40);
+    createPlatform(800, 300, 40, 40);
+    createPlatform(1000, 250, 40, 40);
+    createPlatform(1100, 280, 100, 40);
+    createPlatform(1200, 200, 30, 30);
+    createPlatform(1100, 300, 50, 300);
+    createPlatform(1100, 600, 300, 50);
+    createPlatform(1240, 280, 50, 50);
+    createPlatform(1200, 230, 30, 90);
+    createPlatform(1380, 450, 10, 10);
+    createPlatform(1300, 450, 10, 10);
+    createPlatform(1180, 450, 10, 10);
 
 
-    
+
     // TODO 2
     // Create collectables
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
-createCollectable("mario", 0, 450);
-createCollectable("rupee", 1340, 50);
-createCollectable("database", 800, 250);
-createCollectable("ring", 1160, 300)
+    createCollectable("mario", 0, 450);
+    createCollectable("rupee", 1340, 50);
+    createCollectable("database", 800, 250);
+    createCollectable("ring", 1160, 300);
 
 
     // TODO 3
@@ -86,16 +86,16 @@ createCollectable("ring", 1160, 300)
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
 
-createCannon("right", 740, 1000);
-createCannon("top", 80, 2000);
-createCannon("bottom", 720, 825);
-createCannon("bottom", 820, 576);
-createCannon("bottom", 1015, 700);
-createCannon("top", 1145, 700);
-createCannon("right", 180, 2000);
-createCannon("right", 650, 1, 100, 100);
-createCannon("top", 450, 2000);
-createCannon("left", 250, 3000)
+    createCannon("right", 740, 1000);
+    createCannon("top", 80, 2000);
+    createCannon("bottom", 720, 825);
+    createCannon("bottom", 820, 576);
+    createCannon("bottom", 1015, 700);
+    createCannon("top", 1145, 700);
+    createCannon("right", 180, 2000);
+    createCannon("right", 650, 1, 100, 100);
+    createCannon("top", 450, 2000);
+    createCannon("left", 250, 3000);
 
 
 
