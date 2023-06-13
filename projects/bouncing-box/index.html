@@ -53,8 +53,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY)
 			}
 
 			// changes the text displayed on the Box
@@ -70,6 +71,14 @@
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
+			var positionY = 0;
+			var speedY = 10;
+			var boardHeight = jQuery(window).height();
+			var randNum = Math.random() * boardWidth;
+			var colorStr = randomColorStr
+			box.css('backround-color', colorStr);
+			var randomColorStr = Math.random() * 250;
+
 
 
 			/* 
@@ -79,15 +88,24 @@
 			*/
 			// Your code to increase positionX by 10 here
 			function update() {
-				moveBoxTo(positionX);
+				moveBoxTo(positionX, positionY);
 				positionX = positionX + speed;
+				positionY = positionY + speedY;
+			
 				if (positionX > boardWidth) {
 					speed *= -1;
 				}
 				if (positionX < 0) {
 					speed *= -1;
-					
+
 				}
+				if (positionY > boardHeight) {
+					speedY *= -1;
+				}
+				if (positionY < 0) {
+					speedY *= -1;
+				}
+				
 
 			};
 
@@ -97,7 +115,7 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
+				positionX = randNum;
 				points = points + 1;
 				changeBoxText(points);
 				if (speed > 0) {
@@ -106,9 +124,17 @@
 				else if (speed < 0) {
 					speed = speed - 3;
 				}
+				
 
 
 			};
+			function getRandomColor() {
+				red = randomColorStr
+				green = randomColorStr
+				blue = randomColorStr
+				colorStr = rgb($red,$green,$blue)
+
+			}
 		})();
 	</script>
 </body>
