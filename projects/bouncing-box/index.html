@@ -23,6 +23,7 @@
 		.board {
 			height: 100vh;
 			background-color: grey;
+			display: misclicks
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -47,15 +48,20 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			var interval = setInterval(update, 50);
 
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			board.on('click', handleBoardClick)
 
+			function endGame() {
+				clearInterval(interval);
+			}
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
 				box.css("top", newPositionY)
+				box.css("backround-color", colorStr)
 			}
 
 			// changes the text displayed on the Box
@@ -75,9 +81,10 @@
 			var speedY = 10;
 			var boardHeight = jQuery(window).height();
 			var randNum = Math.random() * boardWidth;
-			var colorStr = randomColorStr
-			box.css('backround-color', colorStr);
+			var colorStr = 'rgb(50, 25, 250)'
 			var randomColorStr = Math.random() * 250;
+			var misclicks = 0;
+			
 
 
 
@@ -91,7 +98,7 @@
 				moveBoxTo(positionX, positionY);
 				positionX = positionX + speed;
 				positionY = positionY + speedY;
-			
+
 				if (positionX > boardWidth) {
 					speed *= -1;
 				}
@@ -105,10 +112,19 @@
 				if (positionY < 0) {
 					speedY *= -1;
 				}
-				
+
 
 			};
 
+
+			function handleBoardClick() {
+				if (misclicks === 10) {
+					endGame(interval)
+				}
+				else {
+					misclicks = misclicks + 1
+				}
+			}
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
@@ -124,7 +140,7 @@
 				else if (speed < 0) {
 					speed = speed - 3;
 				}
-				
+
 
 
 			};
@@ -132,9 +148,8 @@
 				red = randomColorStr
 				green = randomColorStr
 				blue = randomColorStr
-				colorStr = rgb($red,$green,$blue)
 
-			}
+			};
 		})();
 	</script>
 </body>
