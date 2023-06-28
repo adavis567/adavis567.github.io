@@ -39,11 +39,16 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'yellow');
+            var backgroundFill = draw.rect(canvasWidth,groundY,'gray');
             background.addChild(backgroundFill);
             
             // TODO 2: - Add a moon and starfield
-            
+            var nier = draw.bitmap("img/backround.jpeg");
+            nier.x = 0;
+            nier.y = 0;
+            nier.scaleX = .5;
+            nier.scaleY = .35;
+            background.addChild(nier);
             
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
