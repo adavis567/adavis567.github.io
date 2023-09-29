@@ -56,6 +56,7 @@ function runProgram() {
   function newFrame() {
     repositionGameItem()
     wallCollision()
+    walkerCollision()
     redrawGameItem()
   }
 
@@ -175,6 +176,12 @@ function runProgram() {
     }
     else if (walls.bottomWall <= walker2["y-coordinate"]) {
       walker2["y-coordinate"] -= walker2["y-speed"]
+    }
+  }
+
+  function walkerCollision() {
+    if (walker["x-coordinate"] === walker2["x-coordinate"]) {
+      console.log("hi")
     }
   }
 }
