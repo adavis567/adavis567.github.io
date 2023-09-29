@@ -14,21 +14,31 @@ function runProgram() {
     "LEFT": 37,
     "UP": 38,
     "RIGHT": 39,
-    "DOWN": 40
+    "DOWN": 40,
+    "a": 65,
+    "w": 87,
+    "d": 68,
+    "s": 83
   }
 
   // Game Item Objects
   var walker = {
+    "x-coordinate": 390,
+    "y-coordinate": 390,
+    "x-speed": 0,
+    "y-speed": 0
+  }
+  var walker2 = {
     "x-coordinate": 0,
     "y-coordinate": 0,
     "x-speed": 0,
     "y-speed": 0
   }
   var walls = {
-    "leftWall":0,
-    "rightWall":$("#board").width() - 50,
-    "topWall":0,
-    "bottomWall":$("#board").height() - 50
+    "leftWall": 0,
+    "rightWall": $("#board").width() - 50,
+    "topWall": 0,
+    "bottomWall": $("#board").height() - 50
   }
 
   // one-time setup
@@ -65,7 +75,21 @@ function runProgram() {
     else if (event.which === KEY.DOWN) {
       walker["y-speed"] = 5
     }
+
+    if (event.which === KEY.a) {
+      walker2["x-speed"] = -5
+    }
+    else if (event.which === KEY.w) {
+      walker2["y-speed"] = -5
+    }
+    else if (event.which === KEY.d) {
+      walker2["x-speed"] = 5
+    }
+    else if (event.which === KEY.s) {
+      walker2["y-speed"] = 5
+    }
   }
+
   function handleKeyUp(event) {
     if (event.which === KEY.LEFT) {
       walker["x-speed"] = 0
@@ -79,6 +103,20 @@ function runProgram() {
     else if (event.which === KEY.DOWN) {
       walker["y-speed"] = 0
     }
+
+    if (event.which === KEY.a) {
+      walker2["x-speed"] = 0
+    }
+    else if (event.which === KEY.w) {
+      walker2["y-speed"] = 0
+    }
+    else if (event.which === KEY.d) {
+      walker2["x-speed"] = 0
+    }
+    else if (event.which === KEY.s) {
+      walker2["y-speed"] = 0
+    }
+
   }
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -97,11 +135,15 @@ function runProgram() {
   function repositionGameItem() {
     walker["x-coordinate"] += walker["x-speed"]
     walker["y-coordinate"] += walker["y-speed"]
+    walker2["x-coordinate"] += walker2["x-speed"]
+    walker2["y-coordinate"] += walker2["y-speed"]
   }
 
   function redrawGameItem() {
     $("#walker").css("left", walker["x-coordinate"])
     $("#walker").css("top", walker["y-coordinate"])
+    $("#walker2").css("left", walker2["x-coordinate"])
+    $("#walker2").css("top", walker2["y-coordinate"])
   }
 
   function wallCollision() {
@@ -118,6 +160,21 @@ function runProgram() {
     }
     else if (walls.bottomWall <= walker["y-coordinate"]) {
       walker["y-coordinate"] -= walker["y-speed"]
+    }
+
+    if (walls.leftWall >= walker2["x-coordinate"]) {
+      walker2["x-coordinate"] -= walker2["x-speed"]
+      walker2["y-coordinate"] -= walker2["y-speed"]
+    }
+    else if (walls.rightWall <= walker2["x-coordinate"]) {
+      walker2["x-coordinate"] -= walker2["x-speed"]
+      walker2["y-coordinate"] -= walker2["y-speed"]
+    }
+    else if (walls.topWall >= walker2["y-coordinate"]) {
+      walker2["y-coordinate"] -= walker2["y-speed"]
+    }
+    else if (walls.bottomWall <= walker2["y-coordinate"]) {
+      walker2["y-coordinate"] -= walker2["y-speed"]
     }
   }
 }
