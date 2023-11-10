@@ -117,21 +117,21 @@ function moveSnake() {
   column/row properties. 
   
   */
-  for (var i = snake.body.length - 1; i >= 1; i--) {
-    console.log(snake.body[0].column)
-    console.log(snake.body[0].row)
-  //   var snakeSquare = 0;
+  for (var i = snake.body.length - 1; i >= 1 ; i--) {
+    console.log(snake.body[i])
+    var snakeSquare = snake.body[i];
 
-  //   var nextSnakeSquare = ;
-  //   var nextRow = snake.body[0].row ;
-  //   var nextColumn = snake.body[0].column ;
-  //   var nextDirection = snake.body[0].direction;
+    var nextSnakeSquare = snake.body[i - 1];
+    var nextRow = snake.body[i - 1].row;
+    var nextColumn = snake.body[i - 1].column;
+    var nextDirection = snake.body[i - 1].direction;
 
-  //   snakeSquare.direction = nextDirection;
-  //   snakeSquare.row = nextRow;
-  //   snakeSquare.column = nextColumn;
-  //   repositionSquare(snakeSquare);
-  }
+    snakeSquare.direction = nextDirection;
+    snakeSquare.row = nextRow;
+    snakeSquare.column = nextColumn;
+    console.log(snake.body[i])
+    repositionSquare(snakeSquare);
+}
 
 
   //Before moving the head, check for a new direction from the keyboard input
