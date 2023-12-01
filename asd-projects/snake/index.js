@@ -118,7 +118,6 @@ function moveSnake() {
   
   */
   for (var i = snake.body.length - 1; i >= 1 ; i--) {
-    console.log(snake.body[i])
     var snakeSquare = snake.body[i];
 
     var nextSnakeSquare = snake.body[i - 1];
@@ -246,12 +245,15 @@ function hasCollidedWithSnake() {
   head and each part of the snake's body also knows its own row and column.
   
   */
- if (snake.head === snake.body) {
-  return true
+ for (var i = snake.body.length - 1; i >= 1; i--) {
+  if (snake.body[i].row === snake.head.row && snake.body[i].column === snake.head.column) {
+    return true
+  }
+  else {
+    return false
+  }
  }
-else {
-  return false;
-}
+ 
 }
 
 function endGame() {
@@ -362,9 +364,16 @@ function getRandomAvailablePosition() {
 
   /* Generate random positions until one is found that doesn't overlap with the snake */
   while (!spaceIsAvailable) {
-    randomPosition.column = Math.floor(Math.random() * COLUMNS);
-    randomPosition.row = Math.floor(Math.random() * ROWS);
-    spaceIsAvailable = true;
+    for (var h = snake.body.length - 1; h >= 1; h--) {
+      if (snake.body[h].row === apple.row && snake.body[h].column === apple.column) {
+        spaceIsAvailable = false
+      }
+      else {
+        randomPosition.column = Math.floor(Math.random() * COLUMNS);
+        randomPosition.row = Math.floor(Math.random() * ROWS);
+        spaceIsAvailable = true;
+      }
+     }
 
     /*
     TODO 13: After generating the random position determine if that position is
