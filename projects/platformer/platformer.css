@@ -3,7 +3,7 @@ body {
 }
 
 canvas {
-  background-color: rgb lightgrey;
+  background-color: rgb rgb(0, 0, 0);
 }
 
 img {
