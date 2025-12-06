@@ -23,3 +23,5 @@ Anthony Davis
 
 ## Final Notes
 This file was created for my final project and demonstrates proper GitHub workflow (branching, pull requests, merging).
+
+This line was added on the final-update branch.
