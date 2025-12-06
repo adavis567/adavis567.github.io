@@ -4,14 +4,14 @@ This project displays a moving box that bounces around the screen.
 It demonstrates basic animation logic using JavaScript, along with HTML and CSS.
 
 ## How to Run
-1. Open the folder "bouncing-box".
-2. Open "index.html" in a browser.
-3. The animated box will appear and bounce around the screen.
+1. Go to the folder "bouncing-box".
+2. Open the file "index.html" in any browser.
+3. You will see the animated box bounce around the screen.
 
 ## Features
-- Box moves automatically
-- Bounces off all walls
-- Uses simple JavaScript interval-based animation
+- The box moves automatically.
+- The box bounces off each wall.
+- Animation built using simple JavaScript timing functions.
 
 ## Technologies Used
 - HTML
@@ -21,5 +21,5 @@ It demonstrates basic animation logic using JavaScript, along with HTML and CSS.
 ## Author
 Anthony Davis
 
-## Final Submission Notes
-This README was created as part of the final project to document the bouncing box program and demonstrate Git workflow.
+## Final Notes
+This file was created for my final project and demonstrates proper GitHub workflow (branching, pull requests, merging).
